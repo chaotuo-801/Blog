@@ -1,0 +1,21 @@
+server:
+  port: 8888
+
+spring:
+#  数据库的配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vueblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  application:
+    name: wock_blog
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+#  打印日志到控制台,可以看到一些sql语句
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#标识一下表的前缀是ms_
+  global-config:
+    db-config:
+      table-prefix: ms_
